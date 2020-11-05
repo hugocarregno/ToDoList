@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="./css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <title>TO DO LIST</title>
+</head>
+<body>
+    
+    <div class="contenedor">
+        <div><h2>LISTA DE TAREAS DE WALTER</h2></div>
+        <div><input type="text" name="input" id="input"><button onclick="agregar('input')">ADD</button></div>
+            <ul id="tasks">
+                <li><i class="fa fa-trash eliminar" aria-hidden="true"></i><input type="checkbox" name="task1" id="task1" class="finalizar" value="entrenar">Entrenar</li>
+                <li><i class="fa fa-trash eliminar" aria-hidden="true"></i><input type="checkbox" name="task2" id="task2" class="finalizar" value="estudiar">Estudiar</li>
+                <li><i class="fa fa-trash eliminar" aria-hidden="true"></i><input type="checkbox" name="task2" id="task2" class="finalizar" value="dormir">Dormir</li>
+                <li><i class="fa fa-trash eliminar" aria-hidden="true"></i><input type="checkbox" name="task2" id="task2" class="finalizar" value="programar">Programar</li>
+              </ul>
+        </div>
+    </div>
+    <script src="./js/scripts.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            finalizar();
+            eliminar();
+            let lista = document.querySelector('ul');
+            lista.addEventListener('click', function(ev) {
+                //console.log(ev);
+                if (ev.target.tagName === 'LI') {
+                    let li = this.parentElement;
+                    ev.target.classList.toggle('tachar');
+                }
+            }, false); 
+            
+        });
+    </script>
+</body>
+</html>
