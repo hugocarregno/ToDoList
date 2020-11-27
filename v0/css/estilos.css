@@ -1,0 +1,51 @@
+body{
+    margin:0;
+    min-width: 250px;
+}
+
+div.contenedor{
+    margin:auto;
+    text-align: center;
+    width: fit-content;
+}
+
+#input{
+    width: 300px;
+}
+
+.eliminar{
+    position: relative;
+    right: -319px;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+}
+
+.finalizar{
+    margin: 0 3px 0 -42px;
+}
+
+input, button{
+    font-size: 16px;
+}
+
+ul{
+    padding: 0;
+}
+
+li{
+    text-align: left;
+    margin: 10px 0 10px 0;
+    
+}
+
+ul li{
+    list-style-type: none;
+    font-size: 18px;
+    list-style-position:inside;
+    border: 1px solid black;
+}
+
+ul li.tachar{
+    text-decoration: line-through;
+}
+
