@@ -13,15 +13,28 @@ div.contenedor{
     width: 300px;
 }
 
-.eliminar{
+.eliminar, .portapapel, .compartir{
     position: relative;
-    right: -319px;
-    top: 0;
-    padding: 12px 16px 12px 16px;
+    right: -270px;
+    top: -9px;
+    padding: 12px 0px 12px 4px;
 }
 
 .finalizar{
-    margin: 0 3px 0 -42px;
+    margin: 4px 2px 0 -80px;
+}
+
+.fullscreen, #exit{
+    margin-top: 19px;
+}
+
+#exit{
+    display: none;
+}
+
+#encabezado{
+    float:left;
+    font-size: 22px;
 }
 
 input, button{
@@ -33,9 +46,10 @@ ul{
 }
 
 li{
+    display: flex;
     text-align: left;
     margin: 10px 0 10px 0;
-    
+    height: 30px;
 }
 
 ul li{
@@ -48,4 +62,5 @@ ul li{
 ul li.tachar{
     text-decoration: line-through;
 }
+
 
