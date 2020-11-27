@@ -130,13 +130,16 @@ function compartirTexto(){
     for(i=0; i<compartir.length ; i++){
         compartir[i].onclick = function(){
         let li = this.parentElement;
+
+        let tarea = tareas.filter(t => t.id == li.getAttribute('data-tarea-id'))[0];
+
         if (!("share" in navigator)) {
             alert('Web Share API no es soportada.');
             return;
         }
         navigator.share({
             title: 'Tarea',
-            text: `${li.done ? 'Terminada' : 'Pendiente'}: ${li.taskName} (#${li.taskId})`,
+            text: `${tarea.done ? 'Terminada' : 'Pendiente'}: ${tarea.name} (#${tarea.id})`,
             url: ''
         }).then(() => console.log('ok!'))
         .catch(error => console.log('Error:', error));
@@ -218,7 +221,6 @@ function agregar(nueva){
     cb.setAttribute("value","");
     if(typeof nueva === 'object'){
         if(nueva.done){
-            console.log("done ok");
             cb.setAttribute("checked",true);
             li.setAttribute('style','text-decoration: line-through');
         }    
