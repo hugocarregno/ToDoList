@@ -1,0 +1,90 @@
+$umrem: 1rem;
+$umpx: 16px;
+
+@function pxARem($pixel){
+    @return $pixel / $umpx * $umrem;
+}
+
+$maxAncho: 60 * $umrem;
+
+body{
+    margin:0;
+    min{
+        width: pxARem(250px)
+    }
+}
+
+div.contenedor{
+    margin:auto;
+    text{
+        align: center;
+    }
+    width: fit-content;
+}
+
+#input {
+  width: pxARem(300px);
+  min-height: 4rem;
+  max-width: $maxAncho;
+
+}
+  
+.eliminar, .portapapel, .compartir {
+  position: relative;
+  right: pxARem(-210px);
+  top: pxARem(-9px);
+  padding: pxARem(12px) 0rem pxARem(12px) pxARem(4px);
+}
+  
+.finalizar {
+  margin: pxARem(4px) pxARem(2px) 0 pxARem(-80px);
+}
+
+.fullscreen, #exit{
+    margin-top: pxARem(19px);
+}
+
+#exit{
+    display: none;
+}
+
+#encabezado{
+    float:left;
+    font-size: pxARem(22px);
+}
+
+input, button{
+    font-size: $umrem;
+}
+
+.boton, .fullscreen, .compartir, .eliminar, .portapapel{
+    min-width: 3 * $umrem;
+    min-height: 3 * $umrem;
+    border: pxARem(1px) solid black;
+}
+
+ul{
+    padding: 0;
+    li{
+        min-height: 4rem;
+        max-width: $maxAncho;
+        list-style-type: none;
+        font-size: $umrem;
+        list-style-position:inside;
+        border: pxARem(1px) solid black;
+    }
+    li.tachar{
+        text-decoration: line-through;
+    }
+}
+
+li{
+    display: flex;
+    text-align: left;
+    margin: pxARem(10px) 0 $umrem 0;
+    height: pxARem(30px);
+}
+
+hr{
+    border: pxARem(2px) solid black;
+}
